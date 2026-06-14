@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useStore } from "@/lib/store";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function SplashPage() {
   const router = useRouter();
@@ -20,13 +21,13 @@ export default function SplashPage() {
       {/* Hero */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 pt-16 pb-8">
         <div className="w-44 h-44 mb-6 flex items-center justify-center">
-          <Image
-            src="/assets/mascot-greet.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BP}/assets/mascot-greet.png`}
             alt="Ailter 마스코트"
             width={176}
             height={176}
             className="object-contain"
-            priority
           />
         </div>
 

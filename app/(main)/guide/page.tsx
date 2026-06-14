@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useStore } from "@/lib/store";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const learningCards = [
   {
@@ -114,11 +115,11 @@ export default function GuidePage() {
               <Link key={card.id} href={card.href}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-[0_0_20px_0_rgba(0,0,0,0.04)] active:scale-[.98] transition-transform">
                   <div className="relative w-full aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={card.image}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BP}${card.image}`}
                       alt={card.title}
-                      fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                   <div className="px-3 py-3">
@@ -139,11 +140,11 @@ export default function GuidePage() {
               <Link key={item.id} href={item.href} className="flex-shrink-0">
                 <div className="w-[140px] active:scale-[.98] transition-transform">
                   <div className="relative w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2">
-                    <Image
-                      src={item.image}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BP}${item.image}`}
                       alt={item.title}
-                      fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                   <p className="text-[13px] font-semibold text-[#1E1E1E] leading-snug px-0.5">{item.title}</p>

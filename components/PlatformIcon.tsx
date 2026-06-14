@@ -1,5 +1,6 @@
-import Image from "next/image";
 import type { Platform } from "@/lib/mock/records";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const platformMap: Record<Platform, { src: string; alt: string }> = {
   Instagram: { src: "/assets/logo-instagram.png", alt: "Instagram" },
@@ -10,6 +11,7 @@ const platformMap: Record<Platform, { src: string; alt: string }> = {
 export function PlatformIcon({ platform, size = 24 }: { platform: Platform; size?: number }) {
   const p = platformMap[platform];
   return (
-    <Image src={p.src} alt={p.alt} width={size} height={size} className="rounded-md object-contain" />
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={`${BP}${p.src}`} alt={p.alt} width={size} height={size} className="rounded-md object-contain" />
   );
 }

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   basePath: isProd ? "/ailter-app" : "",
   images: { unoptimized: true },
   trailingSlash: true,
+  env: { NEXT_PUBLIC_BASE_PATH: isProd ? "/ailter-app" : "" },
 };
 
 export default nextConfig;

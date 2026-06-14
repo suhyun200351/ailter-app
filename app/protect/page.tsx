@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const features = [
   {
@@ -70,7 +71,8 @@ export default function ProtectPage() {
       {/* Content */}
       <div className="flex-1 px-6 pt-4 pb-6 overflow-y-auto">
         <div className="flex justify-center mb-6">
-          <Image src="/assets/mascot-detective.png" alt="보호 안내" width={120} height={120} className="object-contain" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`${BP}/assets/mascot-detective.png`} alt="보호 안내" width={120} height={120} className="object-contain" />
         </div>
 
         <h2 className="text-[22px] font-bold text-[#1E1E1E] leading-snug mb-2 text-center">

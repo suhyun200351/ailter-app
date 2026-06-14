@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import { useStore } from "@/lib/store";
 import { currentAnalysis } from "@/lib/mock/analysis";
 import { records } from "@/lib/mock/records";
@@ -196,8 +197,9 @@ export default function HomePage() {
               </>
             )}
           </div>
-          <Image
-            src="/assets/mascot-greet.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BP}/assets/mascot-greet.png`}
             alt="마스코트"
             width={88}
             height={88}

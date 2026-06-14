@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import { useStore } from "@/lib/store";
 import { records } from "@/lib/mock/records";
 import { weeklyStats } from "@/lib/mock/analysis";
@@ -103,8 +104,9 @@ export default function RecordsPage() {
               </div>
             </div>
           </div>
-          <Image
-            src="/assets/mascot-greet.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BP}/assets/mascot-greet.png`}
             alt="마스코트"
             width={80}
             height={80}
@@ -144,8 +146,9 @@ export default function RecordsPage() {
                 >
                   {/* Platform row */}
                   <div className="flex items-center gap-3 px-4 pt-4 pb-3">
-                    <Image
-                      src={platformLogo[record.platform] ?? platformLogo["Instagram"]}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BP}${platformLogo[record.platform] ?? platformLogo["Instagram"]}`}
                       alt={record.platform}
                       width={32}
                       height={32}
@@ -160,8 +163,9 @@ export default function RecordsPage() {
 
                   {/* Thumbnail + description row */}
                   <div className="flex gap-3 px-4 pb-4">
-                    <Image
-                      src={platformThumb[record.platform] ?? platformThumb["Instagram"]}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BP}${platformThumb[record.platform] ?? platformThumb["Instagram"]}`}
                       alt={record.title}
                       width={72}
                       height={72}
