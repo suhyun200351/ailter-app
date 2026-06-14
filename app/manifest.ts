@@ -13,8 +13,8 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#FF3C38",
     orientation: "portrait",
     icons: [
-      { src: "/assets/mascot-greet.png", sizes: "192x192", type: "image/png" },
-      { src: "/assets/mascot-greet.png", sizes: "512x512", type: "image/png" },
+      { src: "/assets/app-icon.png", sizes: "192x192", type: "image/png" },
+      { src: "/assets/app-icon.png", sizes: "512x512", type: "image/png" },
     ],
   };
 }
